@@ -1,0 +1,59 @@
+========================================================================
+File:    sample_phish_paypal.eml
+Subject: Action Required: Your account will be suspended
+From:    PayPal Security <service@paypa1-secure.xyz>
+Risk:    [####################] 100/100  ->  MALICIOUS
+------------------------------------------------------------------------
+  +25  Lookalike Domain       Sender domain 'paypa1-secure.xyz' imitates 'paypal'
+  +25  Lookalike Domain       URL host 'paypa1-secure.xyz' imitates 'paypal'
+  +20  Authentication         DMARC = fail
+  +20  Display-Name Spoof     Display name 'PayPal Security' claims paypal but sent from paypa1-secure.xyz
+  +20  Link Mismatch          Link text shows 'www.paypal.com' but points to 'paypa1-secure.xyz'
+  +20  Suspicious URL         URL uses raw IP address: http://198.51.100.23/paypal/login.php
+  +20  Social Engineering     Urgency/pressure phrases: ['account will be suspended', 'click here', 'unusual sign-in', 'verify your account', 'verify your identity', 'within 24 hours']
+  +15  Authentication         SPF = fail
+  +15  Authentication         DKIM = none
+  +15  Sender Mismatch        Return-Path domain 'mailer-xq7.ru' differs from From domain 'paypa1-secure.xyz'
+  +15  Sender Mismatch        Reply-To domain 'account-verify-help.top' differs from From domain 'paypa1-secure.xyz'
+  +10  Suspicious URL         High-risk TLD: paypa1-secure.xyz
+  +10  Suspicious URL         URL shortener hides destination: https://bit.ly/3xPhish
+
+  IOCs:
+    domains  198.51.100.23, account-verify-help.top, bit.ly, mailer-xq7.ru, paypa1-secure.xyz
+    urls     http://198.51.100.23/paypal/login.php, http://paypa1-secure.xyz/signin?id=88213, https://bit.ly/3xPhish
+    ips      198.51.100.23, 203.0.113.45
+
+========================================================================
+File:    sample_malware_invoice.eml
+Subject: FINAL NOTICE: Invoice #INV-20931 payment failed
+From:    DocuSign Billing <billing@d0cusign-invoices.click>
+Risk:    [####################] 100/100  ->  MALICIOUS
+------------------------------------------------------------------------
+  +30  Dangerous Attachment   Double extension disguises file type: Invoice_INV-20931.pdf.exe
+  +25  Lookalike Domain       Sender domain 'd0cusign-invoices.click' imitates 'docusign'
+  +25  Dangerous Attachment   High-risk attachment type: payment_portal.html
+  +20  Authentication         DMARC = fail
+  +20  Display-Name Spoof     Display name 'DocuSign Billing' claims docusign but sent from d0cusign-invoices.click
+  +15  Authentication         SPF = softfail
+  +15  Authentication         DKIM = fail
+  +10  Social Engineering     Urgency/pressure phrases: ['immediately', 'payment failed']
+
+  IOCs:
+    domains  d0cusign-invoices.click
+    ips      203.0.113.99
+    file     Invoice_INV-20931.pdf.exe  sha256=247ce39c1088d8b3fef2aee6526c29af6491bb3e1209037980e95a8505384853
+    file     payment_portal.html  sha256=75820f44d187d1c470370a40c41687ee37432922b5812031a800692a74526a8f
+
+========================================================================
+File:    sample_legit_github.eml
+Subject: [GitHub] A new SSH key was added to your account
+From:    GitHub <noreply@github.com>
+Risk:    [--------------------] 0/100  ->  LIKELY SAFE
+------------------------------------------------------------------------
+  No indicators found.
+
+  IOCs:
+    domains  github.com
+    urls     https://github.com/settings/keys
+    ips      192.0.2.21
+

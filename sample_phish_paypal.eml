@@ -1,0 +1,38 @@
+Received:
+ from mail.paypa1-secure.xyz (unknown [203.0.113.45]) by mx.example.edu
+Authentication-Results: mx.example.edu; spf=fail
+ smtp.mailfrom=paypa1-secure.xyz; dkim=none; dmarc=fail
+From: "PayPal Security" <service@paypa1-secure.xyz>
+Reply-To: support@account-verify-help.top
+Return-Path: <bounce@mailer-xq7.ru>
+To: student@example.edu
+Subject: Action Required: Your account will be suspended
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============0177035497044562212=="
+
+--===============0177035497044562212==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Unusual sign-in activity detected. Verify your account within 24 hours: http:=
+//198.51.100.23/paypal/login.php
+
+--===============0177035497044562212==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body>
+<p>Dear Customer,</p>
+<p>We detected <b>unusual sign-in activity</b> on your PayPal account. Your a=
+ccount will be suspended
+unless you verify your identity <b>within 24 hours</b>.</p>
+<p><a href=3D"http://paypa1-secure.xyz/signin?id=3D88213">https://www.paypal.=
+com/signin</a></p>
+<p>If the link above does not work, click here: <a href=3D"https://bit.ly/3xP=
+hish">Secure Login</a></p>
+<p>Thank you,<br>PayPal Security Team</p>
+</body></html>
+
+--===============0177035497044562212==--

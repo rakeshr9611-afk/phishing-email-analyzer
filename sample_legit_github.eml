@@ -1,0 +1,21 @@
+Received: from out-21.smtp.github.com (out-21.smtp.github.com [192.0.2.21]) by
+ mx.example.edu
+Authentication-Results: mx.example.edu; spf=pass smtp.mailfrom=github.com;
+ dkim=pass header.d=github.com; dmarc=pass
+From: GitHub <noreply@github.com>
+Return-Path: <noreply@github.com>
+To: student@example.edu
+Subject: [GitHub] A new SSH key was added to your account
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hey there,
+
+A new public key was added to your account. If you added this key, no action =
+is needed.
+
+Review your keys: https://github.com/settings/keys
+
+Thanks,
+The GitHub Team
